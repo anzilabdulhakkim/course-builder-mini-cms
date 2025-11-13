@@ -23,30 +23,16 @@ export default function TopicRow({ topic, pathPrefix, updateField, removeTopic }
           </select>
         </div>
 
-        {topic.type === 'video' ? (
-          <div className="md:col-span-1">
-            <label className="text-xs">Link *</label>
-            <input
-              required
-              value={topic.link}
-              onChange={e => updateField(`${pathPrefix}.link`, e.target.value)}
-              className="block w-full border rounded px-2 py-1"
-              placeholder="https://example.com"
-            />
-          </div>
-        ) : (
-          <div className="md:col-span-1">
-            <label className="text-xs">Content *</label>
-            <textarea
-              required
-              value={topic.link}
-              onChange={e => updateField(`${pathPrefix}.link`, e.target.value)}
-              className="block w-full border rounded px-2 py-1"
-              rows={3}
-              placeholder="Your reading material here..."
-            />
-          </div>
-        )}
+      <div className="md:col-span-1">
+        <label className="text-xs">Link *</label>
+        <input
+          required
+          value={topic.link}
+          onChange={e => updateField(`${pathPrefix}.link`, e.target.value)}
+          className="block w-full border rounded px-2 py-1"
+          placeholder="https://example.com"
+        />
+      </div>
 
         <div className="flex items-center">
           <button
