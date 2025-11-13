@@ -38,7 +38,7 @@ This project was developed as part of a company technical assignment to demonstr
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/anzilabdulhakkim/course-builder-mini-cms.git](https://github.com/anzilabdulhakkim/course-builder-mini-cms.git)
+    git clone https://github.com/anzilabdulhakkim/course-builder-mini-cms.git
     cd course-builder-mini-cms
     ```
 2.  **Install dependencies**
