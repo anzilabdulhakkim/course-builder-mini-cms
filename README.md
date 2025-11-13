@@ -1,16 +1,74 @@
-# React + Vite
+# Course Builder Dashboard (Mini CMS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A pixel perfect, production-quality Mini CMS built using React, Context API, Tailwind CSS, and React Router.
+This project was developed as part of a company technical assignment to demonstrate frontend architecture, state management, UI quality, and component-driven development.
 
-Currently, two official plugins are available:
+## Features Implemented
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Core Features
 
-## React Compiler
+* Create, Read, Update, Delete Courses
+* Add multiple Chapters inside each course
+* Add multiple Topics under each chapter
+* Each topic supports:
+    * Topic type: Video or Reading
+    * External link for video
+* Responsive Course List Dashboard
+* Course Detail Page with expandable chapter sections
+* Dynamic forms for chapter and topic creation
+* Pixel-perfect UI built with Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Bonus Features
 
-## Expanding the ESLint configuration
+* Search functionality for courses
+* debounced search handling
+* Local persistence via `localStorage`
+* Reusable and modular UI components
+* Clean and scalable folder structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+* **React.js** (functional components and hooks)
+* **React Router** for navigation
+* **Context API** for global state
+* **Tailwind CSS** for styling
+* **Vite** for development and bundling
+
+## Project Setup Instructions
+
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/anzilabdulhakkim/course-builder-mini-cms.git](https://github.com/anzilabdulhakkim/course-builder-mini-cms.git)
+    cd course-builder-mini-cms
+    ```
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+3.  **Run the development server**
+    ```bash
+    npm run dev
+    ```
+
+## Time Spent
+
+Approximately **5 to 6 hours**, including:
+
+* Project planning and structure
+* UI layout and styling
+* Form creation with dynamic chapter/topic handling
+* Context API development
+* Persistence with `localStorage`
+* UI polish and adding bonus features
+
+## Future Improvements
+
+If more time were available, the following enhancements could be added:
+
+* Admin authentication system
+* UI improvements specifically in form input
+* Rich text editor for reading materials
+* Advanced validation with error messages
+* Role based access control
+* Detailed analytics for course performance
+* Integrating with the backend
