@@ -65,19 +65,23 @@ export default function CourseDetail() {
                               href={t.link}
                               target="_blank"
                               rel="noreferrer"
-                              className="text-sky-600 text-sm"
+                              className="text-sky-600 text-sm hover:underline"
                             >
                               Open Video
                             </a>
                           )}
+                          {t.type === 'reading' && (
+                            <a
+                              href={t.link}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-sky-600 text-sm hover:underline"
+                            >
+                              Open Reading
+                            </a>
+                          )}
                         </div>
                       </div>
-
-                      {t.type === 'reading' && (
-                        <div className="mt-2 text-sm text-gray-700">
-                          {t.link}
-                        </div>
-                      )}
                     </li>
                   ))}
                 </ul>
