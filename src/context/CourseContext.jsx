@@ -11,7 +11,7 @@ const SAMPLE = [
   {
     id: uuidv4(),
     name: 'Beginner React',
-    description: 'Intro to React and Hooks.',
+    description: 'Jumpstart your web development career with this "Beginner React" course.',
     cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqVUnM-QqMQPiLRw8TyVTDp-KQbq08ji43VA&s',
     chapters: [
       {
