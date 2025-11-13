@@ -102,7 +102,7 @@ function App() {
                 />
               </svg>
             </button>
-            <span className="font-bold text-gray-800">Course Builder</span>
+            <span className="font-bold text-gray-800">Dashboard</span>
             <div className="w-10"></div>
           </div>
         </header>
