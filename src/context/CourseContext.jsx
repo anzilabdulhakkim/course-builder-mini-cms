@@ -12,8 +12,7 @@ const SAMPLE = [
     id: uuidv4(),
     name: 'Beginner React',
     description: 'Intro to React and Hooks.',
-    cover:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqVUnM-QqMQPiLRw8TyVTDp-KQbq08ji43VA&s',
     chapters: [
       {
         id: uuidv4(),
