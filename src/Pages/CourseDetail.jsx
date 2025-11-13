@@ -17,11 +17,11 @@ export default function CourseDetail() {
 
   return (
     <div>
-      <div className="flex items-start gap-6">
+      <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
         <img
           src={course.cover || '/placeholder.png'}
           alt=""
-          className="w-80 h-44 object-cover rounded"
+          className="w-full md:w-80 h-44 object-cover rounded md:shrink-0"
         />
         <div>
           <h1 className="text-2xl font-semibold">{course.name}</h1>
