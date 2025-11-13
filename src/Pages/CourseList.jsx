@@ -13,26 +13,73 @@ export default function CourseList() {
   );
 
   return (
-    <div>
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-        <h1 className="text-2xl font-semibold">Courses</h1>
+    <div className="max-w-7xl mx-auto">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
+            Courses
+          </h1>
+          <p className="text-sm text-gray-600 mt-1">
+            {courses.length} {courses.length === 1 ? 'course' : 'courses'}{' '}
+            available
+          </p>
+        </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <SearchBar onSearch={setQuery} />
           <Link
             to="/create"
-            className="px-4 py-2 bg-sky-600 text-white rounded"
+            className="px-5 py-2.5 bg-sky-600 text-white rounded-lg hover:bg-sky-700 font-medium text-center transition-colors whitespace-nowrap"
           >
-            Create Course
+            + New Course
           </Link>
         </div>
       </div>
 
-      {filtered.length === 0 && (
-        <div className="text-gray-500 text-sm">No courses found.</div>
+      {query && (
+        <div className="mb-4 text-sm text-gray-600">
+          Showing {filtered.length} result{filtered.length !== 1 ? 's' : ''} for
+          "{query}"
+        </div>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {filtered.length === 0 && (
+        <div className="text-center py-16">
+          <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg
+              className="w-10 h-10 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">
+            {query ? 'No courses found' : 'No courses yet'}
+          </h3>
+          <p className="text-gray-600 mb-6">
+            {query
+              ? 'Try searching with different keywords'
+              : 'Get started by creating your first course'}
+          </p>
+          {!query && (
+            <Link
+              to="/create"
+              className="inline-block px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 font-medium transition-colors"
+            >
+              Create Your First Course
+            </Link>
+          )}
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {filtered.map(c => (
           <CourseCard key={c.id} course={c} />
         ))}
