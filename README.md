@@ -1,7 +1,7 @@
 # Course Builder Dashboard (Mini CMS)
 
 A pixel perfect, production-quality Mini CMS built using React, Context API, Tailwind CSS, and React Router.
-This project was developed as part of a company technical assignment to demonstrate frontend architecture, state management, UI quality, and component-driven development.
+This project was developed as part of a company technical assignment to demonstrate frontend architecture, state management, UI quality and component-driven development.
 
 ## Features Implemented
 
@@ -66,6 +66,8 @@ Approximately **6 to 7 hours**, including:
 If more time were available, the following enhancements could be added:
 
 * Admin authentication system
+* Add Dark/Light mode toggle
+* Unit test one component using React Testing Library
 * Rich text editor for reading materials
 * Advanced validation with error messages
 * Role based access control
