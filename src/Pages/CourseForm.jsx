@@ -25,8 +25,18 @@ export default function CourseForm() {
   });
 
   useEffect(() => {
-    if (edit) setForm({ ...edit });
-  }, [edit]);
+    if (edit) {
+      setForm({ ...edit }); 
+    } 
+    else {
+      setForm({            
+        name: '',
+        description: '',
+        cover: '',
+        chapters: [emptyChapter()],
+      });
+    }
+  }, [id]);
 
   function updateField(path, value) {
     setForm(prev => {
