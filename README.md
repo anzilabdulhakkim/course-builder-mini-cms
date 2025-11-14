@@ -52,7 +52,7 @@ This project was developed as part of a company technical assignment to demonstr
 
 ## Time Spent
 
-Approximately **5 to 6 hours**, including:
+Approximately **6 to 7 hours**, including:
 
 * Project planning and structure
 * UI layout and styling
@@ -66,9 +66,8 @@ Approximately **5 to 6 hours**, including:
 If more time were available, the following enhancements could be added:
 
 * Admin authentication system
-* UI improvements specifically in form input
 * Rich text editor for reading materials
 * Advanced validation with error messages
 * Role based access control
 * Detailed analytics for course performance
-* Integrating with the backend
+
