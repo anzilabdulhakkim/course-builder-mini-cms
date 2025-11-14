@@ -17,45 +17,60 @@ export default function CourseDetail() {
 
   return (
     <div>
-      <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+      <div className="w-full mb-6">
         <img
           src={course.cover || '/placeholder.png'}
-          alt=""
-          className="w-full md:w-80 h-44 object-cover rounded md:shrink-0"
+          alt={course.name}
+          className="w-full h-56 md:h-56 lg:h-56 object-cover rounded-2xl shadow-lg"
         />
-        <div>
-          <h1 className="text-2xl font-semibold">{course.name}</h1>
-          <p className="text-gray-600 mt-2">{course.description}</p>
-        </div>
       </div>
 
-      <div className="mt-6">
+      <div className="mb-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+          {course.name}
+        </h1>
+        <p className="text-gray-600 mt-3 text-lg leading-relaxed">
+          {course.description}
+        </p>
+      </div>
+
+      <div className="space-y-3">
         {course.chapters.map((ch, idx) => (
-          <div key={ch.id} className="border rounded mb-3 overflow-hidden">
+          <div
+            key={ch.id}
+            className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"
+          >
             <button
-              className="w-full text-left p-3 flex justify-between items-center"
+              className="w-full text-left p-4 md:p-5 flex justify-between items-center hover:bg-gray-50 transition-colors"
               onClick={() => setOpen(open === idx ? null : idx)}
             >
               <div>
-                <div className="font-medium">{ch.title}</div>
-                <div className="text-xs text-gray-500">
-                  {ch.topics?.length || 0} topics
+                <div className="font-semibold text-gray-900 text-base md:text-lg">
+                  {ch.title}
+                </div>
+                <div className="text-xs text-gray-500 mt-1">
+                  {ch.topics?.length || 0}{' '}
+                  {ch.topics?.length === 1 ? 'topic' : 'topics'}
                 </div>
               </div>
-              <div>{open === idx ? '−' : '+'}</div>
+              <div className="text-2xl text-gray-400 font-light">
+                {open === idx ? '−' : '+'}
+              </div>
             </button>
             {open === idx && (
-              <div className="p-3 bg-white">
-                <ul className="space-y-2">
+              <div className="px-4 md:px-5 pb-4 md:pb-5 bg-linear-to-br from-gray-50/50 to-white">
+                <div className="pt-2 space-y-3">
                   {ch.topics.map(t => (
-                    <li
+                    <div
                       key={t.id}
-                      className="pb-3 border-b last:border-b-0 last:pb-0"
+                      className="p-3.5 md:p-4 rounded-lg bg-white border border-gray-200 hover:border-gray-300 transition-colors"
                     >
-                      <div className="flex items-center justify-between">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                         <div>
-                          <div className="font-medium">{t.title}</div>
-                          <div className="text-xs text-gray-500 capitalize">
+                          <div className="font-medium text-gray-900">
+                            {t.title}
+                          </div>
+                          <div className="text-xs text-gray-500 capitalize mt-1 inline-block px-2 py-0.5 bg-gray-100 rounded-full">
                             {t.type}
                           </div>
                         </div>
@@ -65,9 +80,9 @@ export default function CourseDetail() {
                               href={t.link}
                               target="_blank"
                               rel="noreferrer"
-                              className="text-sky-600 text-sm hover:underline"
+                              className="inline-flex items-center text-sky-600 hover:text-sky-700 text-sm font-medium hover:underline"
                             >
-                              Open Video
+                              Open Video →
                             </a>
                           )}
                           {t.type === 'reading' && (
@@ -75,16 +90,16 @@ export default function CourseDetail() {
                               href={t.link}
                               target="_blank"
                               rel="noreferrer"
-                              className="text-sky-600 text-sm hover:underline"
+                              className="inline-flex items-center text-sky-600 hover:text-sky-700 text-sm font-medium hover:underline"
                             >
-                              Open Reading
+                              Open Reading →
                             </a>
                           )}
                         </div>
                       </div>
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
           </div>

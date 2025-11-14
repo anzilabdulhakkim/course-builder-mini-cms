@@ -12,7 +12,7 @@ const SAMPLE = [
     id: uuidv4(),
     name: 'Beginner React',
     description: 'Jumpstart your web development career with this "Beginner React" course.',
-    cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqVUnM-QqMQPiLRw8TyVTDp-KQbq08ji43VA&s',
+    cover: 'https://www.polaz.net/wp-content/uploads/2022/09/50873746516_1b8128bd96_z.jpg',
     chapters: [
       {
         id: uuidv4(),
