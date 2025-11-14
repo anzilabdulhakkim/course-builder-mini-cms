@@ -82,51 +82,71 @@ export default function CourseForm() {
   }
 
   return (
-    <div>
-      <h1 className="text-2xl font-semibold mb-4">
+    <div className="max-w-5xl mx-auto">
+      <h1 className="text-3xl font-bold mb-8 text-gray-900">
         {edit ? 'Edit Course' : 'Create Course'}
       </h1>
-      <form onSubmit={onSubmit} className="space-y-4">
+
+      <form onSubmit={onSubmit} className="space-y-6">
         <div>
-          <label className="block text-sm font-medium">Course Name *</label>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            Course Name *
+          </label>
           <input
             required
             value={form.name}
             onChange={e => updateField('name', e.target.value)}
-            className="mt-1 block w-full border rounded px-3 py-2"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-shadow"
+            placeholder="e.g., Introduction to React"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium">Description *</label>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">Description *</label>
           <textarea
             required
             value={form.description}
             onChange={e => updateField('description', e.target.value)}
-            className="mt-1 block w-full border rounded px-3 py-2"
+            rows={4}
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-shadow resize-none"
+            placeholder="Describe what students will learn..."
           />
         </div>
         <div>
-          <label className="block text-sm font-medium">Cover Image URL</label>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">Cover Image URL</label>
           <input
             value={form.cover}
             onChange={e => updateField('cover', e.target.value)}
-            className="mt-1 block w-full border rounded px-3 py-2"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-shadow"
+            placeholder="https://example.com/image.jpg"
           />
         </div>
 
-        <div>
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-medium">Chapters</h2>
+        <div className="pt-4">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-semibold text-gray-900">Chapters</h2>
             <button
               type="button"
               onClick={addChapter}
-              className="px-3 py-1 bg-sky-100 rounded"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white font-medium rounded-lg transition-colors shadow-sm"
             >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
               Add Chapter
             </button>
           </div>
 
-          <div className="space-y-4 mt-3">
+          <div className="space-y-4">
             {form.chapters.map((ch, idx) => (
               <ChapterEditor
                 key={ch.id}
@@ -141,12 +161,19 @@ export default function CourseForm() {
           </div>
         </div>
 
-        <div className="pt-4">
+        <div className="pt-6 border-t flex gap-3">
           <button
             type="submit"
-            className="px-4 py-2 bg-sky-600 text-white rounded"
+            className="px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg"
           >
             {edit ? 'Save Changes' : 'Create Course'}
+          </button>
+          <button
+            type="button"
+            onClick={() => navigate('/')}
+            className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold rounded-lg transition-colors"
+          >
+            Cancel
           </button>
         </div>
       </form>

@@ -4,52 +4,79 @@ export default function ChapterEditor({ chapter, idx, updateField, removeChapter
     const chapterPath = `chapters.${idx}`;
 
     return (
-      <div className="border rounded p-3 bg-white">
-        <div className="flex justify-between items-start">
-          <div>
-            <label className="text-sm font-medium">Chapter Title *</label>
+      <div className="border-2 border-gray-200 rounded-xl p-5 bg-linear-to-br from-gray-50 to-white shadow-sm hover:shadow-md transition-shadow">
+        <div className="flex justify-between items-start gap-4 mb-4">
+          <div className="flex-1">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">Chapter Title *</label>
             <input
               required
               value={chapter.title}
               onChange={e =>
                 updateField(`${chapterPath}.title`, e.target.value)
               }
-              className="mt-1 block w-full border rounded px-3 py-2"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-shadow"
+              placeholder="e.g., Getting Started"
             />
           </div>
 
-          <div className="ml-3">
-            <button
-              type="button"
-              onClick={() => removeChapter(idx)}
-              className="text-sm text-red-600"
+          <button
+            type="button"
+            onClick={() => removeChapter(idx)}
+            className="mt-7 inline-flex items-center gap-1.5 px-3 py-2 bg-red-50 hover:bg-red-100 text-red-600 font-medium rounded-lg transition-colors border border-red-200"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              Remove
-            </button>
-          </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+              />
+            </svg>
+            Remove
+          </button>
         </div>
 
-        <div className="mt-3 space-y-2">
+        <div className="mt-5 space-y-3">
           <div className="flex items-center justify-between">
-            <h3 className="font-medium">Topics</h3>
+            <h3 className="font-semibold text-gray-800">Topics</h3>
             <button
               type="button"
               onClick={() => addTopic(idx)}
-              className="px-2 py-1 bg-slate-100 rounded text-sm"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium rounded-lg transition-colors text-sm"
             >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
               Add Topic
             </button>
           </div>
 
-          {chapter.topics.map((t, ti) => (
-            <TopicRow
-              key={t.id}
-              topic={t}
-              pathPrefix={`${chapterPath}.topics.${ti}`}
-              updateField={updateField}
-              removeTopic={() => removeTopic(idx, ti)}
-            />
-          ))}
+          <div className="space-y-3">
+            {chapter.topics.map((t, ti) => (
+              <TopicRow
+                key={t.id}
+                topic={t}
+                pathPrefix={`${chapterPath}.topics.${ti}`}
+                updateField={updateField}
+                removeTopic={() => removeTopic(idx, ti)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     );
