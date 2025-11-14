@@ -16,7 +16,7 @@ export default function CourseCard({ course }) {
       <div className="h-48 bg-gray-200 overflow-hidden">
         <img
           src={
-            course.cover || 'https://via.placeholder.com/400x300?text=No+Image'
+            course.cover || 'https://placehold.co/600x400'
           }
           alt={course.name}
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"

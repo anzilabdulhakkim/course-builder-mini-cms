@@ -19,7 +19,7 @@ export default function CourseDetail() {
     <div>
       <div className="w-full mb-6">
         <img
-          src={course.cover || '/placeholder.png'}
+          src={course.cover || 'https://placehold.co/600x400/png'}
           alt={course.name}
           className="w-full h-56 md:h-56 lg:h-56 object-cover rounded-2xl shadow-lg"
         />
